@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    android:layout_marginBottom="12dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="7dp">
+
+            <ImageView
+                android:id="@+id/owner_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="4dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/owner_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                app:layout_constraintBottom_toTopOf="@+id/question_published"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/owner_img"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Fulano" />
+
+            <TextView
+                android:id="@+id/question_published"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/owner_img"
+                app:layout_constraintTop_toBottomOf="@+id/owner_name"
+                tools:text="4 hours ago" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:padding="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#1E88E5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question_published" />
+
+            <HorizontalScrollView
+                android:id="@+id/labels_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:padding="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/labels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleLine="true" />
+            </HorizontalScrollView>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#f3f3f3"
+                app:layout_constraintBottom_toTopOf="@id/votes_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/votes_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toTopOf="@id/votes"
+                app:layout_constraintEnd_toStartOf="@+id/answers_label"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="12333" />
+
+            <TextView
+                android:id="@+id/votes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="votes"
+                android:textColor="#c3c3c3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/votes_label"
+                app:layout_constraintStart_toStartOf="@+id/votes_label" />
+
+            <TextView
+                android:id="@+id/answers_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/votes_label"
+                app:layout_constraintEnd_toStartOf="@+id/views_label"
+                app:layout_constraintStart_toEndOf="@+id/votes_label"
+                app:layout_constraintTop_toTopOf="@+id/votes_label"
+                tools:text="1212" />
+
+            <TextView
+                android:id="@+id/answers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="answers"
+                android:textColor="#c3c3c3"
+                app:layout_constraintEnd_toEndOf="@+id/answers_label"
+                app:layout_constraintStart_toStartOf="@+id/answers_label"
+                app:layout_constraintTop_toBottomOf="@+id/answers_label" />
+
+            <TextView
+                android:id="@+id/views_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/answers_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/answers_label"
+                app:layout_constraintTop_toTopOf="@+id/answers_label"
+                tools:text="12333" />
+
+            <TextView
+                android:id="@+id/views"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="views"
+                android:textColor="#c3c3c3"
+                app:layout_constraintEnd_toEndOf="@+id/views_label"
+                app:layout_constraintStart_toStartOf="@+id/views_label"
+                app:layout_constraintTop_toBottomOf="@+id/views_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
