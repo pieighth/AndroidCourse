@@ -4,20 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".sw.StarWarsActivity"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-    <Button
+    >
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Old"
-        android:id="@+id/btn_main_old"
+        android:id="@+id/id_sw_rv"
         />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="New"
-        android:id="@+id/btn_main_new"
-        />
-
-
 </LinearLayout>

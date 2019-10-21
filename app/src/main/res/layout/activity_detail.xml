@@ -5,19 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-    <Button
+    android:gravity="center|center_horizontal"
+    tools:context=".sw.DetailActivity">
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Old"
-        android:id="@+id/btn_main_old"
+        android:id="@+id/detail_url"
+        android:gravity="center"
+        android:text="teste"
         />
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New"
-        android:id="@+id/btn_main_new"
+        android:id="@+id/detail_name"
+        android:gravity="center"
+        android:text="teste"
         />
-
-
 </LinearLayout>
