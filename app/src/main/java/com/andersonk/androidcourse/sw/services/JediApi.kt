@@ -1,5 +1,6 @@
 package com.andersonk.androidcourse.sw.services
 
+import android.util.Log
 import com.andersonk.androidcourse.sw.models.People
 import com.andersonk.androidcourse.sw.models.Peoples
 import retrofit2.Call
@@ -20,4 +21,10 @@ interface JediApi {
     fun getPeople(@Path(value = "fullUrl", encoded = true) fullUrl: String ) : Call<People>
 
 
+
+/*  funciona
+    @GET
+    fun getPeople(@Url fullUrl: String) : Call<People>
+
+ */
 }

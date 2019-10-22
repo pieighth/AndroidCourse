@@ -27,7 +27,7 @@ class DetailActivity : AppCompatActivity() {
 
     fun getData(url: String){
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://swapi.co/api/")
+            .baseUrl(url)
             .addConverterFactory(JacksonConverterFactory.create())
             .build()
 
@@ -41,8 +41,10 @@ class DetailActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<People>, response: Response<People>) {
+                Log.d("NETWORK", response.code().toString())
                 when (response.code()){
                     200 ->{
+                        Log.d("NETWORK", "recebi: " + response.body().toString())
                         val body = response.body()
                         body?.let {
                             detail_name.text = it.name
