@@ -42,7 +42,8 @@ class StarWarsActivity : AppCompatActivity() {
 
         call.enqueue(object: Callback<Peoples>{
             override fun onFailure(call: Call<Peoples>, t: Throwable) {
-                Log.d("NETWORK",t?.message)
+                Log.d("NETWORKD",t?.message)
+
             }
 
             override fun onResponse(call: Call<Peoples>, response: Response<Peoples>) {

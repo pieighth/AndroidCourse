@@ -21,7 +21,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory
 
 class StackActivity : AppCompatActivity() {
 
-    val questionAdapter = QuestionAdapter()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,52 +29,9 @@ class StackActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
 
-
-        val layoutManager = LinearLayoutManager(this)
-        recycler_question.layoutManager = layoutManager
-        recycler_question.adapter = questionAdapter
-
-        getData()
     }
 
-    private fun getData() {
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.stackexchange.com/2.2/")
-            .addConverterFactory(JacksonConverterFactory.create())
-            .build()
 
-        val service = retrofit.create<Api>(Api::class.java)
-
-        val call = service.getQuestions(
-            mapOf(
-                "order" to "desc",
-                "sort" to "activity",
-                "site" to "stackoverflow"
-            )
-        )
-
-        call.enqueue(object: Callback<QuestionList> {
-            override fun onFailure(call: Call<QuestionList>, t: Throwable) {
-                Log.d("NETWORK", t.toString())
-            }
-
-            override fun onResponse(call: Call<QuestionList>, response: Response<QuestionList>) {
-                when(response.code()){
-                    200 ->{
-                        val body = response.body()
-                        body?.let {
-                            questionAdapter.setQuestions(it.items as MutableList<Question>)
-                        }
-                    }
-                    204 -> {
-                        Log.d("NETWORK", "Ta vazio irmao")
-                    }
-
-                }
-            }
-
-        })
-    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

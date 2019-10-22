@@ -20,6 +20,7 @@ class DetailActivity : AppCompatActivity() {
         val peopleUrl = intent.getStringExtra("people")
         peopleUrl?.let{
             detail_url.text = it
+            getData(it)
         }
     }
 

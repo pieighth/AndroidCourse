@@ -17,9 +17,7 @@ interface JediApi {
 
     //@GET("people/{id}")
     @GET("{fullUrl}")
-    fun getPeople(
-        @Path(value = "fullUrl", encoded = true) fullUrl: String
+    fun getPeople(@Path(value = "fullUrl", encoded = true) fullUrl: String ) : Call<People>
 
-    ) : Call<People>
 
 }
