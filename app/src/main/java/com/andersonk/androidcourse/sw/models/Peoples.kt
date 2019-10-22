@@ -11,5 +11,5 @@ data class Peoples(
     @JsonProperty("previous")
     val previous: String? = null,
     @JsonProperty("results")
-    val results: List<People?>? = null
+    val results: MutableList<People?>? = null
 )

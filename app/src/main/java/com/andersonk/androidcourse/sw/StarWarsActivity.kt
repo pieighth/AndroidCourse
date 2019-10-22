@@ -42,14 +42,16 @@ class StarWarsActivity : AppCompatActivity() {
 
         call.enqueue(object: Callback<Peoples>{
             override fun onFailure(call: Call<Peoples>, t: Throwable) {
-                Log.d("NETWORK",t?.message)
+                Log.d("NETWORK",t.message)
             }
 
             override fun onResponse(call: Call<Peoples>, response: Response<Peoples>) {
+                Log.d("NETWORK", response.code().toString())
                 when (response.code()){
                     200 -> {
                         val body = response.body()
                         body?.let{
+                            Log.d("NETWORK", response.body().toString())
                             peoplesAdapter.setPeoples(it.results as MutableList<People>)
                         }
                     }
