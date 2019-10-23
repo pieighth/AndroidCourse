@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.andersonk.androidcourse.adapters.FragmentTabs
 import com.andersonk.androidcourse.adapters.QuestionAdapter
+import com.andersonk.androidcourse.fragments.HelloFragment
+import com.andersonk.androidcourse.fragments.StackFragment
 import com.andersonk.androidcourse.models.Question
 import com.andersonk.androidcourse.models.QuestionList
 import com.andersonk.androidcourse.services.Api
@@ -27,6 +30,32 @@ class StackActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stack)
         setSupportActionBar(toolbar)
+
+        val fragmentTabs = FragmentTabs(supportFragmentManager)
+
+        pages.adapter = fragmentTabs
+
+//        var stackFragment = StackFragment()
+//        var helloFragment = HelloFragment()
+//
+//
+//        stack_button.setOnClickListener {
+//            supportFragmentManager
+//                .beginTransaction()
+//                .replace(R.id.stack_id, stackFragment, "stack")
+//                .commit()
+//        }
+//
+//        main_button.setOnClickListener {
+//            supportFragmentManager
+//                .beginTransaction()
+//                .replace(R.id.stack_id, helloFragment, "hello")
+//                .commit()
+//        }
+
+
+
+
 
 
     }
