@@ -8,31 +8,61 @@
     tools:context=".StackActivity"
     tools:showIn="@layout/activity_stack">
 
-   <androidx.viewpager.widget.ViewPager
+<!--   <androidx.viewpager.widget.ViewPager-->
+<!--       android:layout_width="match_parent"-->
+<!--       android:layout_height="match_parent"-->
+<!--       android:id="@+id/pages"-->
+<!--   >-->
+<!--      <com.google.android.material.tabs.TabLayout-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="wrap_content"-->
+<!--         >-->
+<!--         <com.google.android.material.tabs.TabItem-->
+<!--             android:layout_width="wrap_content"-->
+<!--             android:layout_height="wrap_content"-->
+<!--             android:text="name"-->
+
+<!--            />-->
+<!--         <com.google.android.material.tabs.TabItem-->
+<!--             android:layout_width="wrap_content"-->
+<!--             android:layout_height="wrap_content"-->
+<!--            android:text="name"-->
+<!--            />-->
+
+<!--      </com.google.android.material.tabs.TabLayout>-->
+
+
+
+<!--   </androidx.viewpager.widget.ViewPager>-->
+
+<!--   <FrameLayout-->
+<!--       android:layout_width="match_parent"-->
+<!--       android:layout_height="match_parent"-->
+<!--       android:layout_above="@id/nav"-->
+<!--       android:id="@+id/container_fragment"-->
+<!--      >-->
+
+
+<!--   </FrameLayout>-->
+
+   <fragment
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:id="@+id/pages"
-   >
-      <com.google.android.material.tabs.TabLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-         >
-         <com.google.android.material.tabs.TabItem
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="name"
+       android:layout_above="@id/nav"
+       android:id="@+id/container_fragment"
+       android:name="androidx.navigation.fragment.NavHostFragment"
+       app:defaultNavHost="true"
+       app:navGraph="@navigation/menu_navigator"
+      />
+   <com.google.android.material.bottomnavigation.BottomNavigationView
+         android:id="@+id/nav"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       app:menu="@menu/nav_itens"
+       android:background="@android:color/black"
+       app:itemTextColor="@android:color/white"
+      />
 
-            />
-         <com.google.android.material.tabs.TabItem
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-            android:text="name"
-            />
-
-      </com.google.android.material.tabs.TabLayout>
-
-
-
-   </androidx.viewpager.widget.ViewPager>
 
 </RelativeLayout>
